@@ -1,5 +1,7 @@
 'use strict';
 
+import { doWhileStatement } from "@babel/types";
+
 var productName = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntuan', 'unicorn'];
 console.log(productName);
 
@@ -40,4 +42,21 @@ function displayImg() {
   while (showing[0] === showing[2] || showing [1] === showing[2]) {
     showing[2] = makeRandom();
   }
+
+  left.src = Product.all[showing[0]].path;
+  center.src = Product.all[showing[1]].path;
+  right.src = Product.all[showing[2]].path;
+  left.id = Product.all[showing[0]].name;
+  center.id = Product.all[showing[1]].name;
+  right.id = Product.all[showing[2]].name;
 }
+
+function handleClick(e) {
+  if(event.target.id === 'image_container') {
+    alert('click on the image!');
+  }
+  displayImg();
+}
+
+container.addEventListener('click', handleClick);
+displayImg();
