@@ -1,7 +1,5 @@
 'use strict';
 
-import { doWhileStatement } from "@babel/types";
-
 var productName = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntuan', 'unicorn'];
 console.log(productName);
 
@@ -51,12 +49,16 @@ function displayImg() {
   right.id = Product.all[showing[2]].name;
 }
 
-function handleClick(e) {
+function handleClick(event) {
+  console.log(event.target.id + ' was clicked');
   if(event.target.id === 'image_container') {
     alert('click on the image!');
   }
-  displayImg();
+
+  if(event.target.classList.contains('image')) {
+    displayImg();
+  }
 }
 
-container.addEventListener('click', handleClick);
-displayImg();
+// document.addEventListener('click', handleClick);
+// displayImg();
