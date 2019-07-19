@@ -47,10 +47,10 @@ if(localStorage.productVotes) {
   new Product('pet-sweep', './img/pet-sweep.jpg');
   new Product('scissors', './img/scissors.jpg');
   new Product('shark', './img/shark.jpg');
-  new Product('sweep', './img/sweep.png');
+  new Product('sweep', './img/sweep.jpg');
   new Product('tauntaun', './img/tauntaun.jpg');
   new Product('unicorn', './img/unicorn.jpg');
-  new Product('usb', './img/usb.gif');
+  new Product('usb', './img/usb.jpg');
   new Product('water-can', './img/water-can.jpg');
   new Product('wine-glass', './img/wine-glass.jpg');
 }
@@ -74,9 +74,9 @@ function randomImage() {
   lastShown[0] = secondRandom;
   lastShown[0] = thirdRandom;
 
-  firstImg[0] = allProducts[firstRandom].path;
-  secondImg[1] = allProducts[secondRandom].path;
-  thirdImg[2] = allProducts[thirdRandom].path;
+  firstImg.src = allProducts[firstRandom].path;
+  secondImg.src = allProducts[secondRandom].path;
+  thirdImg.src = allProducts[thirdRandom].path;
 
   firstImg.alt = allProducts[firstRandom].name;
   secondImg.alt = allProducts[secondRandom].name;
